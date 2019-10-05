@@ -1,0 +1,104 @@
+\documentclass[answers,12pt,addpoints]{exam}
+\usepackage{amsmath,amssymb}
+\usepackage{totcount,xinttools,xfp}
+\usepackage{etoolbox}
+\usepackage{tabu,multirow,color,xcolor}
+\shadedsolutions
+\header{\bfseries\large Math 115\\Professor Hilbert}{}{\bfseries\large First Exam\\July 4, 1776}
+\runningheader{Math 115}{}{Second Exam (Continued)}
+%\lhead{Math 115}
+%\chead[Second Exam]{Second Exam (Continued)}
+%\rhead{July 4, 1776}
+\newtotcounter{sumpoints}
+\newtotcounter{dati}
+\newtotcounter{thissectionsumquestions}
+\newcommand{\makepart}[3]{%
+    %\setcounter{thissectionsumquestions}{0}
+    \stepcounter{dati}
+	\begin{EnvFullwidth}
+		\vspace{0.05em}%
+		\fontsize{10.5pt}{15.75pt}\selectfont
+		\begin{tabular}{|c|c|c}
+			\cline{1-2}
+			\textbf{Score} & \textbf{Reviewer} & \multirow{2}{*}{\bfseries\Roman{dati} #1(each~#2~points,total~#3~points)} \\
+			\cline{1-2}
+			& & \\
+			\cline{1-2}
+		\end{tabular}
+		\normalsize
+		\vspace{0.5em}
+	\end{EnvFullwidth}
+}
+%\csappto{question}{\stepcounter{thissectionsumquestions}\thethissectionsumquestions}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\begin{center}
+\begin{tabular}{|*{\inteval{3+\totvalue{dati}}}{c|}}
+\hline
+question number & \xintFor* #1 in {\xintSeq {1}{\totvalue{dati}}} \do {\xintifForFirst{}{&}\romannumeral#1} & Reviewer & Checker\\
+\hline
+\xintFor* #1 in {\xintSeq {1}{\inteval{3+\totvalue{dati}}}} \do {\xintifForFirst{}{&} }\\
+\hline
+\end{tabular}
+\end{center}
+
+
+%\begin{center}
+%\gradetable[h][questions]
+%\end{center}
+
+\begin{questions}
+\makepart{Single Choices}{10}{30}
+\question[10]
+I love \hfill (\quad).
+
+\begin{oneparchoices}
+\choice he
+\choice she
+\CorrectChoice you
+\choice my dog
+\end{oneparchoices}
+
+\question[10]
+I love \hfill (\quad).
+
+\begin{oneparchoices}
+\choice he
+\choice she
+\choice my dog
+\CorrectChoice you
+\end{oneparchoices}
+
+\question[10]
+I love \hfill (\quad).
+
+\begin{oneparchoices}
+\CorrectChoice you
+\choice he
+\choice she
+\choice my dog
+\end{oneparchoices}
+
+\makepart{Blank}{10}{30}
+\question[10]
+I love \fillin[You][1in].
+\question[10]
+I love \fillin[You][1in].
+\question[10]
+I love \fillin[You][1in].
+
+\makepart{Computations}{20}{40}
+\question[20]
+Why you love me?
+\begin{solution}
+You are temperament and beautiful.
+\end{solution}
+
+
+\question[20]
+Why you love me?
+\begin{solution}
+You are temperament and beautiful.
+\end{solution}
+\end{questions}
+\end{document}
